@@ -1,7 +1,7 @@
 * {
   cursor: url(../img/pointer.png), auto;
   scroll-behavior: smooth;
-  list-style: none;
+    margin: 0;
 }
 
 
@@ -93,6 +93,9 @@ section {
 
 
 .content {
+   position: absolute;
+  left: 0;
+  width: 100%;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: #1d1d1d;
@@ -115,6 +118,91 @@ section {
 .content > a > p { 
   text-align: center; 
   margin: 0;
+}
+
+/*****************cv*************************/
+
+
+.curriculum {
+  padding: 2em;
+  background-color: #1b1f23;
+  color: white;
+}
+
+.curriculum h2 {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.columns {
+  display: flex;
+  gap: 2em;
+  margin-top: 2em;
+  justify-content: center;
+}
+
+.column {
+  flex: 1;
+  position: relative;
+}
+
+.column h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  border-left: 3px solid #00c291;
+  padding-left: 0.5em;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 2em;
+  padding-left: 1.5em;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 0.8em;
+  height: 0.8em;
+  background-color: #00c291;
+  border-radius: 50%;
+  border: 2px solid #1b1f23;
+  box-shadow: 0 0 0 2px #00c291;
+}
+
+.box {
+  background-color: #262b30;
+  padding: 1em;
+  border-radius: 0.5em;
+  border-left: 3px solid #00c291;
+}
+
+.box h4 {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.box h5 {
+  color: #00c291;
+  margin: 0.2em 0;
+}
+
+.date {
+  font-size: 0.9em;
+  opacity: 0.7;
+  margin-bottom: 0.5em;
+}
+
+.box ul {
+  padding-left: 1.2em;
+  list-style: disc;
+  margin: 0;
+}
+
+.box ul li {
+  margin-bottom: 0.3em;
 }
 
 /*****************CONTACT*************************/
