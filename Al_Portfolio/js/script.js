@@ -53,20 +53,33 @@ window.onresize = function () {
 
 function setupCollapsible() {
     var coll = document.getElementsByClassName("collapsible");
-    
+
     for (var i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight) { 
-            content.style.maxHeight = null; 
-            this.style.borderRadius = "1em";
-        } 
-        else { 
-            content.style.maxHeight = content.scrollHeight + "px";
-            this.style.borderRadius = "1em 1em 0em 0em";
-        }
-      });
+        coll[i].addEventListener("click", function() {
+            // Cerrar todos los demás
+            for (var j = 0; j < coll.length; j++) {
+                if (coll[j] !== this) {
+                    coll[j].classList.remove("active");
+                    coll[j].style.borderRadius = "1em";
+                    var otherContent = coll[j].nextElementSibling;
+                    if (otherContent) {
+                        otherContent.style.maxHeight = null;
+                    }
+                }
+            }
+
+            // Toggle el actual
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                this.style.borderRadius = "1em";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                this.style.borderRadius = "1em 1em 0em 0em";
+            }
+        });
     }
 }
   

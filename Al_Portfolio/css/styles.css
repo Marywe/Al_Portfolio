@@ -60,16 +60,24 @@ section {
 
 
 /********PROYECTOS************/
+#projects_container {
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: dodgerblue;
+
+}
+
 .proyecto {
-  margin: 2em auto; 
+  margin: 2em auto;
+  width: 100%;
 }
 .proyecto figure img {
-  height: 100%;
+  width: 80%;
   object-fit: cover;
   position: absolute;
 }
 .proyecto figure {
-  max-width: 1500px;
   height: 400px;
   overflow: hidden;
   position: relative;
@@ -86,7 +94,6 @@ section {
   border-radius: 0em 0em 1em 1em;
 
   max-height: 0;
-  max-width: 1500px;
   margin: 0 auto;
 
   display: flex;
@@ -99,10 +106,6 @@ section {
   margin: 1em 1.5em;
   margin-bottom: 0;
 }
-
-.content iframe { margin: 2em 0; }
-
-.content i { font-size: 12em; }
 
 .content > a > p { 
   text-align: center; 
