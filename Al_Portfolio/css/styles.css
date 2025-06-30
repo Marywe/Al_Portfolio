@@ -205,6 +205,23 @@ section {
   margin-bottom: 0.3em;
 }
 
+
+#pdf-container{
+  text-align: center;
+  color: white;
+  background-color: #021325;
+  border-radius: 1em;
+  margin: 0 auto;  
+  width: 10em;
+  transition: background-color 0.3s;
+
+
+}
+
+#pdf-container:hover {
+   background-color: #0056b3;
+    }
+
 /*****************CONTACT*************************/
 #contact_list ul {
   display: flex;
