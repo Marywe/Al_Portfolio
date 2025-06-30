@@ -55,7 +55,7 @@ function setupCollapsible() {
     var coll = document.getElementsByClassName("collapsible");
 
     for (var i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
+        coll[i].addEventListener("click", function () {
             // Cerrar todos los demás
             for (var j = 0; j < coll.length; j++) {
                 if (coll[j] !== this) {
@@ -82,6 +82,38 @@ function setupCollapsible() {
         });
     }
 }
-  
+
+
+
+
+function ChangeCategory(){
+const buttons = document.querySelectorAll('.filter-buttons button');
+const items = document.querySelectorAll('.proyecto');
+
+console.log("Botones encontrados:", buttons.length);
+console.log("Proyectos encontrados:", items.length);
+
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const category = button.getAttribute('data-category');
+        items.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+    });
+});
+}
+
+
+document.addEventListener("DOMContentLoaded", ChangeCategory);
 document.addEventListener("DOMContentLoaded", setupCollapsible);
+
+
+
 

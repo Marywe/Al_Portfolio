@@ -1,20 +1,23 @@
 * {
   cursor: url(../img/pointer.png), auto;
   scroll-behavior: smooth;
-    margin: 0;
+  margin: 0;
 }
 
 
 body {
   background-image: url(../img/AlPort_BG.gif);
 }
-a { text-decoration: none; }
+
+a {
+  text-decoration: none;
+}
 
 
 
 section {
   scroll-margin-top: 7em;
-}  
+}
 
 
 /******MENU******/
@@ -24,7 +27,9 @@ section {
   z-index: 1;
 }
 
-#menu>i { display: none; }
+#menu>i {
+  display: none;
+}
 
 #menu>ul {
   background-color: rgba(0, 0, 0, 0.9);
@@ -36,24 +41,27 @@ section {
 #menu>ul>li {
   font-size: 2.4em;
   flex: 1;
-  height:100%;
+  height: 100%;
 }
 
 
-#menu>ul>li>a, #menu>ul>li>i {  
-  display: flex; 
-  align-items: center; 
+#menu>ul>li>a,
+#menu>ul>li>i {
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
+
 #menu>ul>li:first-child {
   display: none;
 }
 
 #menu>ul>li:hover {
   transition: 00.5s;
-  background-color: rgb(32, 32, 32);}
+  background-color: rgb(32, 32, 32);
+}
 
 
 /**********ABOUT**********/
@@ -73,27 +81,29 @@ section {
 .proyecto {
   width: 100%;
 }
+
 .proyecto figure {
   height: 100%;
   overflow: hidden;
   position: relative;
   margin: 0;
-  display: flex;               
-  align-items: center;         
-  justify-content: center;     
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .proyecto figure img {
-  width: 100%;                 
-  height: 100%;                
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  position: static;            
+  position: static;
   border-radius: 1em;
 }
 
+.hidden { display: none;}
 
 .content {
-   position: absolute;
+  position: absolute;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -115,8 +125,8 @@ section {
   margin-bottom: 0;
 }
 
-.content > a > p { 
-  text-align: center; 
+.content>a>p {
+  text-align: center;
   margin: 0;
 }
 
@@ -206,12 +216,12 @@ section {
 }
 
 
-#pdf-container{
+#pdf-container {
   text-align: center;
   color: white;
   background-color: #021325;
   border-radius: 1em;
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 10em;
   transition: background-color 0.3s;
 
@@ -219,8 +229,8 @@ section {
 }
 
 #pdf-container:hover {
-   background-color: #0056b3;
-    }
+  background-color: #0056b3;
+}
 
 /*****************CONTACT*************************/
 #contact_list ul {
@@ -236,15 +246,21 @@ section {
   padding: 1em;
 }
 
-#contact_list p { text-align: center; }
-#contact_list i { 
-  font-size: 8em; 
+#contact_list p {
+  text-align: center;
+}
+
+#contact_list i {
+  font-size: 8em;
   padding: 0.1em 0em;
 }
-.contact_info { font-size: 0.7em; }
+
+.contact_info {
+  font-size: 0.7em;
+}
 
 /*****************FOOTER*************************/
-footer p{ 
+footer p {
   text-align: center;
   font-size: 0.8em;
 }
@@ -256,23 +272,31 @@ footer p{
 
 /*****************RESOLUTIONS*************************/
 @media screen and (max-width: 1200px) {
-/* Smaller menu, column containers */
+
+  /* Smaller menu, column containers */
   #menu>ul>li {
     font-size: 1.6em;
   }
 
-  #contact_list li { flex: 40%; }
-  #contenedor { flex-direction: column;}
+  #contact_list li {
+    flex: 40%;
+  }
+
+  #contenedor {
+    flex-direction: column;
+  }
 
 }
+
 @media screen and (max-width: 720px) {
   #menu>ul {
     flex-direction: column;
     text-align: center;
     height: auto;
   }
-  #menu>ul>li { 
-    background-color: rgba(13,13,13, 0.7);
+
+  #menu>ul>li {
+    background-color: rgba(13, 13, 13, 0.7);
     flex: auto;
     height: 4em;
   }
@@ -282,21 +306,27 @@ footer p{
     height: 2.5em;
   }
 
-  #menu>ul>li:not(:first-child) {
-  }
+  #menu>ul>li:not(:first-child) {}
 
   #menu>ul>li>a>img {
     width: 10%;
   }
 
 
-  #contact_list li { flex: 90%; }
-  #contact_list li i{ font-size: 3em;}
+  #contact_list li {
+    flex: 90%;
+  }
 
-  section { margin: 2em 1.3em; }
-  section > div{padding: 1.3em 1.3em;} 
+  #contact_list li i {
+    font-size: 3em;
+  }
+
+  section {
+    margin: 2em 1.3em;
+  }
+
+  section>div {
+    padding: 1.3em 1.3em;
+  }
 
 }
-
-
-
