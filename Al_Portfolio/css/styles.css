@@ -17,6 +17,7 @@ a {
 
 section {
   scroll-margin-top: 7em;
+  padding: 2em;
 }
 
 
@@ -80,18 +81,27 @@ section {
 
 
 /********PROYECTOS************/
+
+.filter-buttons
+{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #projects_container {
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: dodgerblue;
+  display: flex;
   gap: 2em;
   padding: 2em;
-
+flex-wrap: wrap;
+justify-content: space-around;
 }
 
 .proyecto {
-  width: 100%;
+    width: 100%;
+    position: relative;
+    max-width: 340px;
+    height: fit-content;
 }
 
 .proyecto figure {
@@ -146,8 +156,6 @@ section {
 
 
 #curriculum {
-  padding: 2em;
-  background-color: #1b1f23;
   color: white;
 }
 
@@ -313,12 +321,11 @@ footer p {
     height: 4em;
   }
 
-  #menu>ul>li:first-child {
+  /* #menu>ul>li:first-child {
     display: block;
     height: 2.5em;
-  }
+  } */
 
-  #menu>ul>li:not(:first-child) {}
 
   #menu>ul>li>a>img {
     width: 10%;
