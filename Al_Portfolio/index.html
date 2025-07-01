@@ -22,19 +22,25 @@
 
 <body>
     <nav id="menu">
-        <ul>
-            <li>
+        <ul id="menu-left">
+            <!-- <li>
                 <i class="fas fa-bars" onclick="menu()"></i>
-            </li>
-            <li>
-                <a href="#" onclick="closeMenu()">HOME</a>
-            </li>
-            <li>
-                <a href="#about" onclick="closeMenu()">ABOUT ME</a>
-            </li>
+            </li>             -->
+
             <li>
                 <a href="#proyectos" onclick="closeMenu()">PROJECTS</a>
             </li>
+            <li>
+                <a href="#curriculum" onclick="closeMenu()">CURRICULUM</a>
+            </li>
+            
+           
+        </ul>
+
+        <div id="menu-title">
+                <a href="#" onclick="closeMenu()">AL'S PORTFOLIO</a>
+        </div>
+        <ul id="menu-right">
             <li>
                 <a href="#contact" onclick="closeMenu()">CONTACT</a>
             </li>
@@ -45,11 +51,26 @@
     <!--*********ABOUT ME*********-->
     <section id="about">
         <p>
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer parturient purus interdum cubilia pretium vehicula ante nascetur habitant quam, quisque fermentum facilisi justo curabitur scelerisque et ornare urna aliquam, sociosqu dictum vitae cum potenti condimentum sollicitudin venenatis praesent. Mattis urna leo ad malesuada tempor libero, aptent justo et commodo nascetur sed penatibus, dictum lacus quisque tellus vivamus. Gravida tincidunt erat at lacinia ac ultricies facilisis, aliquet penatibus sociosqu massa aptent habitant pretium conubia, mollis cubilia non tortor orci imperdiet.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer parturient purus interdum cubilia pretium
+            vehicula ante nascetur habitant quam, quisque fermentum facilisi justo curabitur scelerisque et ornare urna
+            aliquam, sociosqu dictum vitae cum potenti condimentum sollicitudin venenatis praesent. Mattis urna leo ad
+            malesuada tempor libero, aptent justo et commodo nascetur sed penatibus, dictum lacus quisque tellus
+            vivamus. Gravida tincidunt erat at lacinia ac ultricies facilisis, aliquet penatibus sociosqu massa aptent
+            habitant pretium conubia, mollis cubilia non tortor orci imperdiet.
 
-Sed iaculis quam a taciti conubia auctor montes, morbi potenti erat aliquam senectus commodo primis, curabitur ac eget mi mus massa. Orci ac ullamcorper dui est habitant pharetra risus dictumst, mollis sodales natoque bibendum morbi auctor vehicula, curabitur fermentum integer penatibus malesuada urna duis. Tortor neque praesent auctor nostra vulputate rhoncus viverra quam fringilla, nibh aliquet mi nisl bibendum sociosqu ad nunc, enim penatibus id fusce odio duis nullam porttitor.
+            Sed iaculis quam a taciti conubia auctor montes, morbi potenti erat aliquam senectus commodo primis,
+            curabitur ac eget mi mus massa. Orci ac ullamcorper dui est habitant pharetra risus dictumst, mollis sodales
+            natoque bibendum morbi auctor vehicula, curabitur fermentum integer penatibus malesuada urna duis. Tortor
+            neque praesent auctor nostra vulputate rhoncus viverra quam fringilla, nibh aliquet mi nisl bibendum
+            sociosqu ad nunc, enim penatibus id fusce odio duis nullam porttitor.
 
-Vehicula hac sociis suscipit placerat convallis mi vitae feugiat senectus lacinia tempor inceptos, nascetur torquent habitant natoque ut laoreet quam velit condimentum aliquam. Aenean porttitor justo nisi donec ad suspendisse conubia semper sodales eu pulvinar, rutrum aliquam luctus auctor ridiculus placerat phasellus felis in dis. Sed morbi suscipit tortor nullam curabitur placerat mauris curae tincidunt volutpat laoreet fusce diam mi, ligula libero natoque cras eget massa magnis justo fames sollicitudin ut facilisis. Nisl taciti praesent dui nunc odio aenean venenatis, class sem ut magna sed feugiat pellentesque natoque, et laoreet suscipit sociis proin viverra.
+            Vehicula hac sociis suscipit placerat convallis mi vitae feugiat senectus lacinia tempor inceptos, nascetur
+            torquent habitant natoque ut laoreet quam velit condimentum aliquam. Aenean porttitor justo nisi donec ad
+            suspendisse conubia semper sodales eu pulvinar, rutrum aliquam luctus auctor ridiculus placerat phasellus
+            felis in dis. Sed morbi suscipit tortor nullam curabitur placerat mauris curae tincidunt volutpat laoreet
+            fusce diam mi, ligula libero natoque cras eget massa magnis justo fames sollicitudin ut facilisis. Nisl
+            taciti praesent dui nunc odio aenean venenatis, class sem ut magna sed feugiat pellentesque natoque, et
+            laoreet suscipit sociis proin viverra.
         </p>
     </section>
 
@@ -69,9 +90,11 @@ Vehicula hac sociis suscipit placerat convallis mi vitae feugiat senectus lacini
                     <img src="img/2021-10-29+14-19-28_Trim.gif" alt="">
                 </figure>
 
-                <div class="content">
-                    <p> hghdfwjhsjfvweufuyweevufuiwu</p>
-                </div>
+
+            </div>
+
+            <div class="content">
+                <p> hghdfwjhsjfvweufuyweevufuiwu</p>
             </div>
 
             <div class="proyecto" data-category="unity">
@@ -115,7 +138,7 @@ Vehicula hac sociis suscipit placerat convallis mi vitae feugiat senectus lacini
     <!-- *********CV********* -->
 
 
-    <section class="curriculum">
+    <section id="curriculum">
         <h2>Curriculum</h2>
         <div class="columns">
             <!-- EDUCATION -->

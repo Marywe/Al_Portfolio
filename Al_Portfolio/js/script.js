@@ -90,10 +90,6 @@ function ChangeCategory(){
 const buttons = document.querySelectorAll('.filter-buttons button');
 const items = document.querySelectorAll('.proyecto');
 
-console.log("Botones encontrados:", buttons.length);
-console.log("Proyectos encontrados:", items.length);
-
-
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         buttons.forEach(btn => btn.classList.remove('active'));
