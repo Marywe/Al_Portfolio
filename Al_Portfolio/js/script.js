@@ -107,6 +107,16 @@ buttons.forEach(button => {
 }
 
 
+function CopyText(texto) {
+    navigator.clipboard.writeText(texto)
+      .then(() => {
+        alert('Copied!: ' + texto);
+      })
+      .catch(err => {
+        console.error('Copy error', err);
+      });
+  }
+
 document.addEventListener("DOMContentLoaded", ChangeCategory);
 document.addEventListener("DOMContentLoaded", setupCollapsible);
 
