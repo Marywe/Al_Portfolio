@@ -3,9 +3,8 @@
   scroll-behavior: smooth;
   margin: 0;
   color: white;
-  font-family:  "Germania One";
+  font-family: "Germania One";
 }
-
 
 
 body {
@@ -20,6 +19,7 @@ h2 {
   text-align: center;
   font-size: 2.5em;
   font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
 
@@ -34,8 +34,8 @@ section {
   position: fixed;
   width: 100%;
   z-index: 100;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
@@ -57,7 +57,8 @@ section {
   height: 100%;
 } */
 
-#menu-left, #menu-right {
+#menu-left,
+#menu-right {
   display: flex;
   gap: 1.5em;
   padding: 0;
@@ -70,6 +71,7 @@ section {
   font-size: 3em;
   text-align: center;
 }
+
 /* 
 #menu>ul>li>a,
 #menu>ul>li>i {
@@ -87,13 +89,47 @@ section {
 
 /*******************************ABOUT**********************************/
 
-#about{
+#about {
   padding-top: 4em;
 }
+
+#about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+#about-container figure img {
+  width: 300px;
+}
+
+#about-container>p {
+  text-align: justify;
+  width: 50%;
+}
+
+#about-container ul {
+  list-style: none;
+  display: flex;
+  padding: 0em;
+  gap: 1em;
+  text-align: center;
+}
+
+#about-container ul li i {
+  font-size: 6em;
+  color: #B400D9;
+}
+
+#about-container ul li i:hover {
+  color: #4e0f5a;
+  transition: 0.3s;
+}
+
 /***************************PROYECTOS********************************/
 
-.filter-buttons
-{
+.filter-buttons {
   display: flex;
   justify-content: space-evenly;
 }
@@ -103,15 +139,15 @@ section {
   display: flex;
   gap: 2em;
   padding: 2em;
-flex-wrap: wrap;
-justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .proyecto {
-    width: 100%;
-    position: relative;
-    max-width: 340px;
-    height: fit-content;
+  width: 100%;
+  position: relative;
+  max-width: 340px;
+  height: fit-content;
 }
 
 .proyecto figure {
@@ -132,7 +168,9 @@ justify-content: space-around;
   border-radius: 1em;
 }
 
-.hidden { display: none;}
+.hidden {
+  display: none;
+}
 
 .content {
   position: absolute;
@@ -179,7 +217,7 @@ justify-content: space-around;
 .column h3 {
   font-size: 1.5em;
   margin-bottom: 1em;
-  border-left: 3px solid #00c291;
+  border-left: 3px solid #B400D9;
   padding-left: 0.5em;
 }
 
@@ -195,17 +233,17 @@ justify-content: space-around;
   top: 0.4em;
   width: 0.8em;
   height: 0.8em;
-  background-color: #00c291;
+  background-color: #B400D9;
   border-radius: 50%;
   border: 2px solid #1b1f23;
-  box-shadow: 0 0 0 2px #00c291;
+  box-shadow: 0 0 0 2px #B400D9;
 }
 
 .box {
   background-color: #262b30;
   padding: 1em;
   border-radius: 0.5em;
-  border-left: 3px solid #00c291;
+  border-left: 3px solid #B400D9;
 }
 
 .box h4 {
@@ -214,7 +252,7 @@ justify-content: space-around;
 }
 
 .box h5 {
-  color: #00c291;
+  color: #B400D9;
   margin: 0.2em 0;
 }
 
@@ -237,17 +275,21 @@ justify-content: space-around;
 
 #pdf-container {
   text-align: center;
-  background-color: #021325;
+  background-color: #B400D9;
   border-radius: 1em;
   margin: 0 auto;
   width: 10em;
+  height: 1.5em;
   transition: background-color 0.3s;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
 
 }
 
 #pdf-container:hover {
-  background-color: #0056b3;
+  background-color: #4e0f5a;
 }
 
 /*****************CONTACT*************************/
@@ -272,6 +314,7 @@ justify-content: space-around;
 #contact_list i {
   font-size: 8em;
   padding: 0.1em 0em;
+  color: #B400D9;
 }
 
 .contact_info {
@@ -285,6 +328,10 @@ footer p {
 }
 
 
+#contact_list i:hover {
+  color: #4e0f5a;
+  transition: 0.3s;
+}
 
 
 
