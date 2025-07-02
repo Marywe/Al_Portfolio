@@ -13,6 +13,7 @@ body {
 
 a {
   text-decoration: none;
+  width: 100%;
 }
 
 h2 {
@@ -123,9 +124,11 @@ section {
   color: #B400D9;
 }
 
-#about-container ul li i:hover {
+#about-container ul li i:hover, #contact_list i:hover {
   color: #4e0f5a;
   transition: 0.3s;
+    cursor: pointer;
+
 }
 
 /***************************PROYECTOS********************************/
@@ -286,12 +289,13 @@ section {
   justify-content: center;
   align-items: center;
   font-size: 2em;
-
 }
 
 #pdf-container:hover {
   background-color: #4e0f5a;
 }
+
+#pdf-container div{ cursor: pointer;}
 
 /*****************CONTACT*************************/
 #contact_list ul {
@@ -326,12 +330,6 @@ section {
 footer p {
   text-align: center;
   font-size: 0.8em;
-}
-
-
-#contact_list i:hover {
-  color: #4e0f5a;
-  transition: 0.3s;
 }
 
 
