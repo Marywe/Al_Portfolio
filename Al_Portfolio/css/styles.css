@@ -27,6 +27,7 @@ h2 {
 section {
   scroll-margin-top: 7em;
   padding: 2em;
+  padding-bottom: 4em;
 }
 
 
@@ -35,7 +36,7 @@ section {
   position: fixed;
   width: 100%;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #120c14;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,9 +67,13 @@ section {
   padding: 0;
   margin: 0;
   list-style: none;
-
+  width: 30%;
+  font-size: 2em;
+  justify-content: space-evenly;
 }
 
+#menu-title{   width: 30%;    
+   text-align: center; }
 #menu-title a {
   font-size: 3em;
   text-align: center;
@@ -148,6 +153,8 @@ section {
 .filter-buttons button {
   font-size: 2em;
   background-color: gray;
+    border-radius: 0.5em;
+
 }
 
 #projects_container {
@@ -251,12 +258,12 @@ section {
   height: 0.8em;
   background-color: #B400D9;
   border-radius: 50%;
-  border: 2px solid #1b1f23;
+  border: 2px solid #252525;
   box-shadow: 0 0 0 2px #B400D9;
 }
 
 .box {
-  background-color: #262b30;
+  background-color: #251829;
   padding: 1em;
   border-radius: 0.5em;
   border-left: 3px solid #B400D9;
@@ -339,13 +346,6 @@ section {
 .contact_info {
   font-size: 0.7em;
 }
-
-/*****************FOOTER*************************/
-footer p {
-  text-align: center;
-  font-size: 0.8em;
-}
-
 
 
 
