@@ -124,10 +124,11 @@ section {
   color: #B400D9;
 }
 
-#about-container ul li i:hover, #contact_list i:hover {
+#about-container ul li i:hover,
+#contact_list i:hover {
   color: #4e0f5a;
   transition: 0.3s;
-    cursor: pointer;
+  cursor: pointer;
 
 }
 
@@ -136,6 +137,17 @@ section {
 .filter-buttons {
   display: flex;
   justify-content: space-evenly;
+}
+
+.filter-buttons button.active {
+  background-color: #B400D9;
+  transform: scale(0.98);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.filter-buttons button {
+  font-size: 2em;
+  background-color: gray;
 }
 
 #projects_container {
@@ -295,7 +307,9 @@ section {
   background-color: #4e0f5a;
 }
 
-#pdf-container div{ cursor: pointer;}
+#pdf-container div {
+  cursor: pointer;
+}
 
 /*****************CONTACT*************************/
 #contact_list ul {

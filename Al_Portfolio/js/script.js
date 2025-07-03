@@ -85,25 +85,47 @@ function setupCollapsible() {
 
 
 
+function ChangeCategory() {
+    const buttons = document.querySelectorAll('.filter-buttons button');
+    const items = document.querySelectorAll('.proyecto');
+    let activeFilters = [];
 
-function ChangeCategory(){
-const buttons = document.querySelectorAll('.filter-buttons button');
-const items = document.querySelectorAll('.proyecto');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category');
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        const category = button.getAttribute('data-category');
-        items.forEach(item => {
-            if (category === 'all' || item.getAttribute('data-category') === category) {
-                item.classList.remove('hidden');
-            } else {
-                item.classList.add('hidden');
+            if (category === 'all') {
+                activeFilters = [];
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                items.forEach(item => item.classList.remove('hidden'));
+                return;
             }
+
+            button.classList.toggle('active');
+
+            const allButton = document.querySelector('button[data-category="all"]');
+            allButton.classList.remove('active');
+
+            if (activeFilters.includes(category)) {
+                activeFilters = activeFilters.filter(cat => cat !== category);
+            } else {
+                activeFilters.push(category);
+            }
+
+            if (activeFilters.length === 0) {
+                allButton.classList.add('active');
+                items.forEach(item => item.classList.remove('hidden'));
+                return;
+            }
+
+            items.forEach(item => {
+                const itemCategories = item.getAttribute('data-category').split(/\s+/);
+                const hasMatch = itemCategories.some(cat => activeFilters.includes(cat));
+                item.classList.toggle('hidden', !hasMatch);
+            });
         });
     });
-});
 }
 
 
