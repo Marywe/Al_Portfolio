@@ -72,8 +72,11 @@ section {
   justify-content: space-evenly;
 }
 
-#menu-title{   width: 30%;    
-   text-align: center; }
+#menu-title {
+  width: 30%;
+  text-align: center;
+}
+
 #menu-title a {
   font-size: 3em;
   text-align: center;
@@ -141,7 +144,14 @@ section {
 
 .filter-buttons {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 1em;
+
+}
+
+.filter-row {
+  display: flex;
+  gap: 1em;
 }
 
 .filter-buttons button.active {
@@ -153,7 +163,7 @@ section {
 .filter-buttons button {
   font-size: 2em;
   background-color: gray;
-    border-radius: 0.5em;
+  border-radius: 0.5em;
 
 }
 
