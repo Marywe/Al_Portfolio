@@ -110,15 +110,28 @@ function ChangeCategory() {
             if (activeFilters.includes(category)) {
                 activeFilters = activeFilters.filter(cat => cat !== category);
             } else {
+                if (category === 'unity') {
+                    activeFilters = activeFilters.filter(cat => cat !== 'unreal');
+                    const unrealBtn = document.querySelector('button[data-category="unreal"]');
+                    unrealBtn.classList.remove('active');
+                }
+                if (category === 'unreal') {
+                    activeFilters = activeFilters.filter(cat => cat !== 'unity');
+                    const unityBtn = document.querySelector('button[data-category="unity"]');
+                    unityBtn.classList.remove('active');
+                }
+
                 activeFilters.push(category);
             }
 
+            //No active filters
             if (activeFilters.length === 0) {
                 allButton.classList.add('active');
                 items.forEach(item => item.classList.remove('hidden'));
                 return;
             }
 
+            //Show and hide
             items.forEach(item => {
                 const itemCategories = item.getAttribute('data-category').split(/\s+/);
                 const hasMatch = itemCategories.some(cat => activeFilters.includes(cat));
@@ -131,13 +144,13 @@ function ChangeCategory() {
 
 function CopyText(texto) {
     navigator.clipboard.writeText(texto)
-      .then(() => {
-        alert('Copied!: ' + texto);
-      })
-      .catch(err => {
-        console.error('Copy error', err);
-      });
-  }
+        .then(() => {
+            alert('Copied!: ' + texto);
+        })
+        .catch(err => {
+            console.error('Copy error', err);
+        });
+}
 
 document.addEventListener("DOMContentLoaded", ChangeCategory);
 document.addEventListener("DOMContentLoaded", setupCollapsible);
