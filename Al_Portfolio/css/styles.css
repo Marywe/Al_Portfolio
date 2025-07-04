@@ -206,15 +206,15 @@ section {
 }
 
 .content {
-  position: absolute;
-  left: 0;
-  width: 100%;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #1d1d1d;
-  border-radius: 0em 0em 1em 1em;
-
   max-height: 0;
+}
+
+.content-global {
+  position: relative;
+  width: 100%;
+  background-color: #1d1d1d;
+  border-radius: 1em;
   margin: 0 auto;
 
   display: flex;
@@ -223,15 +223,11 @@ section {
   justify-content: space-evenly;
 }
 
-.content p {
-  margin: 1em 1.5em;
-  margin-bottom: 0;
+
+.content-global p {
+  margin: 1em ;
 }
 
-.content>a>p {
-  text-align: center;
-  margin: 0;
-}
 
 /*****************CURRICULUM*************************/
 
@@ -360,22 +356,6 @@ section {
 
 
 /*****************RESOLUTIONS*************************/
-@media screen and (max-width: 1200px) {
-
-  /* Smaller menu, column containers */
-  #menu>ul>li {
-    font-size: 1.6em;
-  }
-
-  #contact_list li {
-    flex: 40%;
-  }
-
-  #contenedor {
-    flex-direction: column;
-  }
-
-}
 
 @media screen and (max-width: 720px) {
   #menu>ul {

@@ -52,34 +52,58 @@
 // }
 
 function setupCollapsible() {
-    var coll = document.getElementsByClassName("collapsible");
+    const projectsContainer = document.getElementById("projects_container");
+    const projects = Array.from(document.getElementsByClassName("proyecto"));
 
-    for (var i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
+    // Crear contenedor global para mostrar el contenido expandido
+    let contentGlobal = document.createElement("div");
+    contentGlobal.className = "content-global";
+    projectsContainer.appendChild(contentGlobal);
+
+    projects.forEach(project => {
+        const figure = project.querySelector(".collapsible");
+        const content = project.querySelector(".content");
+
+        figure.addEventListener("click", function () {
+            
+            if (figure.classList.contains("active")) {
+                figure.classList.remove("active");
+                contentGlobal.style.display = "none";
+                contentGlobal.innerHTML = "";
+                return;
+            }
+
             // Cerrar todos los demás
-            for (var j = 0; j < coll.length; j++) {
-                if (coll[j] !== this) {
-                    coll[j].classList.remove("active");
-                    coll[j].style.borderRadius = "1em";
-                    var otherContent = coll[j].nextElementSibling;
-                    if (otherContent) {
-                        otherContent.style.maxHeight = null;
-                    }
-                }
-            }
+            projects.forEach(p => p.querySelector(".collapsible").classList.remove("active"));
+            figure.classList.add("active");
 
-            // Toggle el actual
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
+            // Mostrar contenido
+            contentGlobal.innerHTML = "";
+            contentGlobal.innerHTML = content.innerHTML;
+            contentGlobal.style.display = "block";
 
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                this.style.borderRadius = "1em";
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                this.style.borderRadius = "1em 1em 0em 0em";
-            }
+            // Encontrar en qué fila está el proyecto
+            const projectIndex = projects.indexOf(project);
+            const rowSize = getProjectsPerRow();
+
+            const rowStart = projectIndex - (projectIndex % rowSize);
+            const rowEnd = rowStart + rowSize;
+            const lastInRow = projects[Math.min(rowEnd - 1, projects.length - 1)];
+
+            // Mover el contenedor debajo de la fila
+            projectsContainer.insertBefore(contentGlobal, lastInRow.nextElementSibling);
         });
+    });
+
+    // Detecta cuántos proyectos hay por fila
+    function getProjectsPerRow() {
+        const firstTop = projects[0].offsetTop;
+        for (let i = 1; i < projects.length; i++) {
+            if (projects[i].offsetTop !== firstTop) {
+                return i;
+            }
+        }
+        return projects.length;
     }
 }
 
