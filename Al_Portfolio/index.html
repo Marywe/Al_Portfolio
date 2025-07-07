@@ -98,15 +98,19 @@
     <section id="proyectos">
         <h2>PROJECTS</h2>
         <div class="filter-buttons">
+            <!-- Fila Engine -->
             <div class="filter-row">
-                <button data-category="all" class="active">Any</button>
-                <button data-category="unity">Unity</button>
-                <button data-category="unreal">Unreal</button>
+                <button data-category="all-engine" data-group="engine" class="active">Any</button>
+                <button data-category="unity" data-group="engine">Unity</button>
+                <button data-category="unreal" data-group="engine">Unreal</button>
             </div>
+
+            <!-- Fila Roles -->
             <div class="filter-row">
-                <button data-category="programmer">Programmer</button>
-                <button data-category="designer">Designer</button>
-                <button data-category="artist">Artist</button>
+                <button data-category="all-role" data-group="role" class="active">Any</button>
+                <button data-category="programmer" data-group="role">Programmer</button>
+                <button data-category="designer" data-group="role">Designer</button>
+                <button data-category="artist" data-group="role">Artist</button>
             </div>
         </div>
         <div id="projects_container">
@@ -121,7 +125,7 @@
             </div>
 
 
-            <div class="proyecto" data-category="unity">
+            <div class="proyecto" data-category="unity programmer">
                 <figure class="collapsible">
                     <img src="img/ADCPWECP_Trim.gif" alt="">
                 </figure>

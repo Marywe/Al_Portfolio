@@ -117,58 +117,86 @@ function setupCollapsible() {
 }
 
 
-
 function ChangeCategory() {
     const buttons = document.querySelectorAll('.filter-buttons button');
     const items = document.querySelectorAll('.proyecto');
-    let activeFilters = [];
+
+    let selectedEngine = null; // solo uno o null (Any)
+    let selectedRoles = []; // múltiples o vacío (Any)
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const category = button.getAttribute('data-category');
+            const group = button.getAttribute('data-group');
 
-            if (category === 'all') {
-                activeFilters = [];
-                buttons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                items.forEach(item => item.classList.remove('hidden'));
-                return;
-            }
+            // === ENGINE GROUP ===
+            if (group === 'engine') {
+                // Resetear todos los botones de engine
+                buttons.forEach(btn => {
+                    if (btn.getAttribute('data-group') === 'engine') {
+                        btn.classList.remove('active');
+                    }
+                });
 
-            button.classList.toggle('active');
-
-            const allButton = document.querySelector('button[data-category="all"]');
-            allButton.classList.remove('active');
-
-            if (activeFilters.includes(category)) {
-                activeFilters = activeFilters.filter(cat => cat !== category);
-            } else {
-                if (category === 'unity') {
-                    activeFilters = activeFilters.filter(cat => cat !== 'unreal');
-                    const unrealBtn = document.querySelector('button[data-category="unreal"]');
-                    unrealBtn.classList.remove('active');
-                }
-                if (category === 'unreal') {
-                    activeFilters = activeFilters.filter(cat => cat !== 'unity');
-                    const unityBtn = document.querySelector('button[data-category="unity"]');
-                    unityBtn.classList.remove('active');
+                if (category === 'all-engine') {
+                    selectedEngine = null; // Any
+                } else {
+                    selectedEngine = category;
+                    button.classList.add('active');
                 }
 
-                activeFilters.push(category);
+                // Activar el botón "Any" si no hay selección
+                if (selectedEngine === null) {
+                    document.querySelector('button[data-category="all-engine"]').classList.add('active');
+                }
             }
 
-            //No active filters
-            if (activeFilters.length === 0) {
-                allButton.classList.add('active');
-                items.forEach(item => item.classList.remove('hidden'));
-                return;
+            // === ROLE GROUP ===
+            if (group === 'role') {
+                const isAnyRole = category === 'all-role';
+
+                // Si se pulsa "Any" en roles
+                if (isAnyRole) {
+                    selectedRoles = [];
+                    // Desactivar todos menos "Any"
+                    buttons.forEach(btn => {
+                        if (btn.getAttribute('data-group') === 'role') {
+                            btn.classList.remove('active');
+                        }
+                    });
+                    button.classList.add('active');
+                } else {
+                    // Alternar el botón
+                    button.classList.toggle('active');
+
+                    const allRoleBtn = document.querySelector('button[data-category="all-role"]');
+                    allRoleBtn.classList.remove('active');
+
+                    if (selectedRoles.includes(category)) {
+                        selectedRoles = selectedRoles.filter(role => role !== category);
+                    } else {
+                        selectedRoles.push(category);
+                    }
+
+                    // Si no queda ninguno, volver a "Any"
+                    if (selectedRoles.length === 0) {
+                        allRoleBtn.classList.add('active');
+                    }
+                }
             }
 
-            //Show and hide
+            // Mostrar / ocultar
             items.forEach(item => {
-                const itemCategories = item.getAttribute('data-category').split(/\s+/);
-                const hasMatch = itemCategories.some(cat => activeFilters.includes(cat));
-                item.classList.toggle('hidden', !hasMatch);
+                const categories = item.getAttribute('data-category').split(/\s+/);
+                
+                const matchesEngine =
+                    selectedEngine === null || categories.includes(selectedEngine);
+
+                const matchesRole = selectedRoles.length === 0 || selectedRoles.every(role => categories.includes(role));
+
+                const shouldShow = matchesEngine && matchesRole;
+
+                item.classList.toggle('hidden', !shouldShow);
             });
         });
     });
