@@ -96,6 +96,7 @@ section {
   align-items: center;
   justify-content: center;
   gap: 2em;
+  flex-wrap: wrap;
 }
 
 #about-container figure img {
@@ -403,7 +404,9 @@ section {
     font-size: 2em;
   }
 
-
+.columns {
+  flex-direction: column;
+}
 
   #contact_list li {
     flex: 90%;
