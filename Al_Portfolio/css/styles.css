@@ -40,16 +40,16 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5em; 
+  height: 5em;
 
 }
 
 #menu-toggle {
   display: none;
   cursor: pointer;
-      align-content: center;
-      height: 2em;
-      font-size: 3em;
+  align-content: center;
+  height: 1.5em;
+  font-size: 3em;
 }
 
 #menu-left,
@@ -345,6 +345,18 @@ section {
 
 /*****************RESOLUTIONS*************************/
 
+@media screen and (max-width: 1050px) {
+  #menu-title a {
+    font-size: 2em;
+  }
+
+  #menu-left li,
+  #menu-right li {
+    font-size: 0.6em;
+  }
+}
+
+
 @media screen and (max-width: 720px) {
   #menu {
     flex-direction: column;
@@ -353,10 +365,12 @@ section {
   }
 
   #menu-left,
-  #menu-right,  #menu-title {
+  #menu-right,
+  #menu-title {
     flex-direction: column;
     width: 100%;
     gap: 0;
+
   }
 
   #menu-left li,
@@ -364,26 +378,30 @@ section {
   #menu-title {
     display: none;
     margin: 0.5em 0;
-    font-size: 2em;
+    font-size: 1em;
   }
+
   #menu-toggle {
     display: block;
     order: 1;
     width: 100%;
   }
 
-#menu-title {
-  order: 2;
-}
+  #menu-title {
+    order: 2;
+  }
 
-#menu-left {
-  order: 3;
-}
+  #menu-left {
+    order: 3;
+  }
 
-#menu-right {
-  order: 4;
-}
+  #menu-right {
+    order: 4;
+  }
 
+  #menu-title a {
+    font-size: 2em;
+  }
 
 
 
