@@ -1,55 +1,64 @@
-// function openMenu() {
-//     "use strict";
-//     //Buscamos los li y los guardamos en una variable
-//     var opciones = document.getElementById("menu").firstElementChild.children;
-//     //La variable i nos ayudará a recorrer el bucle e ir presentando las opciones
-//     var i;
-//     for (i = 0; i < opciones.length; i = i + 1) {
-//         opciones[i].style.display = "block";
-//     }
-// }
+function openMenu() {
+  "use strict";
+  document.getElementById("menu-title").style.display = "block";
 
-// function closeMenu() {
-//     "use strict";
-//     //Solo cerramos el menú cuando la pantalla es pequeña (menor a 700px de ancho)
-//     if (window.innerWidth <= 720) {
-//         var opciones = document.getElementById("menu").firstElementChild.children;
-//         var i;
-//         opciones[0].style.display = "block";
-//         for (i = 1; i < opciones.length; i = i + 1) {
-//             opciones[i].style.display = "none";
-//         }
-//     }
-// }
+  const leftItems = document.querySelectorAll("#menu-left li:not(#menu-toggle)");
+  leftItems.forEach(item => item.style.display = "block");
 
-// function menu() {
-//     "use strict";
-//     if (document.getElementById("menu").firstElementChild.lastElementChild.style.display === "block") {
-//         closeMenu();
-//     } else {
-//         openMenu();
-//     }
-// }
+  const rightItems = document.querySelectorAll("#menu-right li");
+  rightItems.forEach(item => item.style.display = "block");
+}
 
-// function openedMenu() {
-//     "use strict";
-//     var opciones = document.getElementById("menu").firstElementChild.children;
-//     var i;
-//     opciones[0].style.display = "none";
-//     for (i = 1; i < opciones.length; i = i + 1) {
-//         opciones[i].style.display = "block";
-//     }
-// }
+function closeMenu() {
+  "use strict";
+  if (window.innerWidth <= 720) {
+    document.getElementById("menu-title").style.display = "none";
 
+    const leftItems = document.querySelectorAll("#menu-left li:not(#menu-toggle)");
+    leftItems.forEach(item => item.style.display = "none");
 
-// window.onresize = function () {
-//     "use strict";
-//     if (window.innerWidth <= 720) {
-//         closeMenu();
-//     } else {
-//         openedMenu();
-//     }
-// }
+    const rightItems = document.querySelectorAll("#menu-right li");
+    rightItems.forEach(item => item.style.display = "none");
+  }
+}
+
+function menu() {
+  "use strict";
+  const title = document.getElementById("menu-title");
+  if (title.style.display === "block") {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
+
+function openedMenu() {
+  "use strict";
+  document.getElementById("menu-title").style.display = "block";
+
+  const leftItems = document.querySelectorAll("#menu-left li:not(#menu-toggle)");
+  leftItems.forEach(item => item.style.display = "block");
+
+  const rightItems = document.querySelectorAll("#menu-right li");
+  rightItems.forEach(item => item.style.display = "block");
+
+}
+
+window.onresize = function () {
+  if (window.innerWidth <= 720) {
+    closeMenu();
+  } else {
+    openedMenu();
+  }
+};
+
+window.onload = function () {
+  if (window.innerWidth <= 720) {
+    closeMenu();
+  } else {
+    openedMenu();
+  }
+};
 
 function setupCollapsible() {
     const projectsContainer = document.getElementById("projects_container");
