@@ -150,7 +150,7 @@ section {
 }
 
 .filter-buttons button {
-  font-size: 2em;
+  font-size: 1.7em;
   background-color: gray;
   border-radius: 0.5em;
 
@@ -210,12 +210,55 @@ section {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  flex-direction: column;
+
+}
+
+#content-title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-top: 0.8em;
 }
 
 
-.content-global p {
+
+.content-body {
+  display: flex;
+  gap: 2em;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+/* Columna izquierda */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+    margin: 1em;
+
+}
+
+#content-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+#content-figure img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 1em;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   margin: 1em;
 }
+
 
 
 /*****************CURRICULUM*************************/
@@ -355,6 +398,10 @@ section {
   #menu-right li {
     font-size: 0.6em;
   }
+
+  .content-body {
+    flex-direction: column;
+  }
 }
 
 
@@ -404,16 +451,16 @@ section {
     font-size: 2em;
   }
 
-.columns {
-  flex-direction: column;
-}
+  .columns {
+    flex-direction: column;
+  }
 
   #contact_list li {
     flex: 90%;
   }
 
   #contact_list li i {
-    font-size: 3em;
+    font-size: 4em;
   }
 
 
