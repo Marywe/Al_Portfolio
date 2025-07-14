@@ -221,7 +221,6 @@ section {
   justify-content: space-evenly;
 }
 
-/* Columna izquierda */
 .left-column {
   display: flex;
   flex-direction: column;
@@ -249,7 +248,34 @@ section {
   margin: 1em;
 }
 
+#game-link {
+  text-align: center;
+  background-color: #B400D9;
+  border-radius: 1em;
+  margin: 0 auto;
+  width: 10em;
+  height: 1.5em;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
 
+#game-link:hover {
+  background-color: #4e0f5a;
+}
+
+
+.collapsible {
+  outline: 0.2em solid gray;
+  border-radius: 1em;
+}
+
+.collapsible.active {
+  outline: 0.6em solid #B400D9;
+  transition: 0.3s;
+}
 
 /*****************CURRICULUM*************************/
 
