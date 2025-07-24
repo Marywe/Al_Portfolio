@@ -92,10 +92,16 @@ section {
   width: 300px;
 }
 
-#about-container>p {
-  text-align: justify;
-  width: 50%;
+#about-txt {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.5em;
 }
+
+#about-name { font-size: 2em; }
+#about-dev, #about-des { font-size: 1.7em; }
 
 #about-container ul {
   list-style: none;
